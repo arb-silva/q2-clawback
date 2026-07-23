@@ -8,13 +8,10 @@
 
 from setuptools import setup, find_packages
 
-import versioneer
-
 
 setup(
     name="q2-clawback",
-    version=versioneer.get_version(),
-    cmdclass=versioneer.get_cmdclass(),
+    version="0.1.0+SILVA",
     packages=find_packages(),
     author="Ben Kaehler",
     author_email="kaehler@gmail.com",
