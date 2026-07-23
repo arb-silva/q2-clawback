@@ -7,7 +7,7 @@
 # ----------------------------------------------------------------------------
 import os
 
-import pkg_resources
+from importlib import resources
 import biom
 import q2templates
 import redbiom.fetch
@@ -18,8 +18,7 @@ from numpy import array
 from skbio import DNA
 from q2_types.feature_data import DNAIterator
 
-TEMPLATES = pkg_resources.resource_filename('q2_clawback', 'assets')
-
+TEMPLATES = str(resources.files('q2_clawback').joinpath('assets'))
 
 def sequence_variants_from_samples(samples: biom.Table) -> DNAIterator:
     seqs = (DNA(s, metadata={'id': s})
